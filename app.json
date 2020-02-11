@@ -1,5 +1,28 @@
 {
   "pages": [
-    "pages/home/home"
-  ]
+    "pages/home/home",
+    "pages/category/category"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#f00",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "娃哈哈",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "selectedColor": "#f00",
+    "list": [{
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "assets/tabbar/1-1.png",
+        "selectedIconPath": "assets/tabbar/1.png"
+      },{
+        "pagePath": "pages/category/category",
+        "text": "分类",
+        "iconPath": "assets/tabbar/2.png",
+        "selectedIconPath": "assets/tabbar/2-2.png"
+      }]
+  }
 }
