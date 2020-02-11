@@ -1,0 +1,10 @@
+<!--数据绑定-->
+<view>Hello,{{name}}</view>
+
+<!--列表渲染-->
+<view wx:for="{{students}}">{{item.name}}</view>
+
+<!--事件监听-->
+<view>{{counter}}</view>
+<button bindtap="increment">+</button>
+<button bindtap="decrement">-</button>
