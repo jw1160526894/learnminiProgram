@@ -1,0 +1,21 @@
+004.注册APP()时做什么？
+1.判断小程序的进入场景
+    小程序执行onLunch(options)和onShow(options)时都会接收一个options参数，其中包括场景值scene，可以
+根据场景值执行不同的业务逻辑
+
+onLaunch()和onShow()的区别：
+onLaunch()是小程序初始化完成时执行，只会执行一次，onShow可能执行多次，执行顺序是onLaunch先执行
+一般在这两个生命周期内获取用户信息等操作
+
+获取用户信息的三种方式：
+1.调用wx.getUserInfo
+2.open-data组件 只能用来展示用户信息，无法获取
+3.<button  open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+
+2.监听生命周期函数
+onLunch -- 小程序初始化完成时的回调函数
+onShow -- 监听小程序启动或切前台
+onHide -- 监听小程序切后台
+onError -- 监听错误
+3.设置全局变量globalData，共享数据
+在其它页面通过getApp().globalData

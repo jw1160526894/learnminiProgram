@@ -13,16 +13,20 @@
   },
   "tabBar": {
     "selectedColor": "#f00",
-    "list": [{
+    "list": [
+      {
         "pagePath": "pages/home/home",
         "text": "首页",
         "iconPath": "assets/tabbar/1-1.png",
         "selectedIconPath": "assets/tabbar/1.png"
-      },{
+      },
+      {
         "pagePath": "pages/category/category",
         "text": "分类",
         "iconPath": "assets/tabbar/2.png",
         "selectedIconPath": "assets/tabbar/2-2.png"
-      }]
-  }
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
 }
