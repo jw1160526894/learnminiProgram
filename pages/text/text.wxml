@@ -1,0 +1,19 @@
+<!--pages/text/text.wxml-->
+<text>text组件</text>
+
+<!--1.selectable设置文本是否可选，默认不可选-->
+<text>你好\n</text>
+<text selectable="true">可选中\n</text>
+
+<!--2.space设置空格-->
+<!-- 可选值：1.ensp中文字符空格一半大小
+       2.emsp中文字符空格大小
+       3.nbsp根据字体设置的空格大小 -->
+<text>哈哈 哈\n</text>   
+<text space="nbsp">哈哈 哈\n</text>     
+<text space="ensp">哈哈 哈\n</text>       
+<text space="emsp">哈哈 哈\n</text>       
+
+<!-- 3.decode 设置是否解码 默认值false -->
+<text decode="true">&lt;img&gt;</text>
+      
