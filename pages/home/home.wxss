@@ -1,1 +1,4 @@
 /* pages/home/home.wxss */
+/*绝对路径和相对路径都可以*/
+/* @import "../view/view.wxss" */
+@import "/pages/view/view.wxss"

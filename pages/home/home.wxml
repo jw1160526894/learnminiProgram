@@ -1,10 +1,48 @@
-<!--数据绑定-->
-<view>Hello,{{name}}</view>
+<!--可以通过@import方式引入样式表-->
+<view class="myClass">可以通过@import方式引入样式表</view>
+
+<!--条件渲染-->
+<view wx:if="{{score>=90}}">优秀{{score}}</view>
+<view wx:elif="{{score>=60 & score<90}}">良好{{score}}</view>
+<view wx:else>差{{score}}</view>
+
+<button bindtap="incrementCount">增加分数</button>
 
 <!--列表渲染-->
-<view wx:for="{{students}}">{{item.name}}</view>
+<!--渲染字符串、数组、数字-->
+<view wx:for="{{9}}">{{item}}</view>
+<text>-------</text>
+<view wx:for="abc">{{item}}</view>
+<text>-------</text>
+<view wx:for="{{[1,2,3]}}">{{item}}</view>
 
-<!--事件监听-->
-<view>{{counter}}</view>
-<button bindtap="increment">+</button>
-<button bindtap="decrement">-</button>
+<!--循环嵌套可以使用wx:for-item 和 wx:for-index防止歧义,使用block标签减少view组件的使用,wx:key指定唯一标识-->
+<!-- <view wx:for="{{myData}}">
+  <view wx:for="{{item}}">{{item}}</view>
+</view> -->
+
+<block wx:for="{{myDatas}}" wx:for-item="myData" wx:key="myData">
+  <view wx:for="{{myData}}" wx:key="index">{{item}}</view>
+</block>
+
+<text>------template模板-------</text>
+
+<template name="myTemplate" >
+  <view>{{time}}</view>
+  <button>{{msg}}</button>
+</template>
+<!--使用模板通过is属性-->
+<template is="myTemplate" data="{{time:'2019-01',msg:'按钮'}}"></template>
+
+<text>-----模板导入------</text>
+
+<!--使用import导入a模板,import有作用域，即只会 import 目标文件中定义的 template，而不会 import 目标文件 import 的 template-->
+<import src="../template/a.wxml" />
+<template is="aaa" data="{{txt:'传入的内容'}}"></template>
+
+<!--include拷贝代码-->
+
+
+<include src="../include/header.wxml" />
+<view>主页内容</view>
+<include src="../include/footer.wxml" />
