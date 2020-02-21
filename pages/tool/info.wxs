@@ -1,0 +1,9 @@
+var fix = function (a) {
+
+  return a.toFixed(2)
+  
+}
+
+module.exports = {
+  Fix: fix
+}

@@ -1,10 +1,18 @@
-<!--数据绑定-->
-<view>Hello,{{name}}</view>
+<!--wxs语法，小程序在wxml中不能直接调用函数，需要借助wxs语法-->
+<!--wxs与js基本相同，不支持es6语法-->
+<!--错误的写法-->
+<!-- <view>{{25.66666.foFixed(2)}}</view> -->
 
-<!--列表渲染-->
-<view wx:for="{{students}}">{{item.name}}</view>
+<!--wxs可以直接定义在wxml中，也可以定义在.wxs文件中-->
+<!-- <wxs module="info">
+var fix = function(a){
+  return a.toFixed(2)
+}
 
-<!--事件监听-->
-<view>{{counter}}</view>
-<button bindtap="increment">+</button>
-<button bindtap="decrement">-</button>
+module.exports={
+  Fix:fix
+}
+</wxs> -->
+
+<wxs src="../tool/info.wxs" module="info" />
+<view>{{info.Fix(25.66666)}}</view>
